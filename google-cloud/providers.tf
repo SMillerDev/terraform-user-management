@@ -1,0 +1,14 @@
+terraform {
+  required_providers {
+    google = {
+      source  = "hashicorp/google"
+      version = "~> 4.18"
+    }
+  }
+}
+
+provider "google" {
+  project = "coral-theme-308623"
+  region  = "europe-west1"
+  zone    = "europe-west1-b"
+}
