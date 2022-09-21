@@ -6,7 +6,6 @@ locals {
 
 module "github" {
   source = "./github"
-  token  = var.github_token
   plc    = local.plc
   tsc    = local.tsc
   ops    = local.ops
