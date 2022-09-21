@@ -1,3 +1,13 @@
+terraform {
+  cloud {
+    organization = "Homebrew"
+
+    workspaces {
+      name = "terraform-user-management"
+    }
+  }
+}
+
 locals {
   plc = ["SMillerDev", "MikeMcQuaid", "jonchang", "issyl0", "mistydemeo"]
   tsc = ["MikeMcQuaid", "Bo98", "fxcoudert", "iMichka", "Rylan12"]
