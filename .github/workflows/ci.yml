@@ -36,7 +36,7 @@ jobs:
       - name: OpenTofu Plan
         env:
           GITHUB_TOKEN: ${{ secrets.TF_GH_TOKEN }}
-        run: tofu plan -no-color
+        run: tofu plan -no-color -var-file .tfvars
 
   trivy:
     name: Trivy
