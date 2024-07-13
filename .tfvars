@@ -41,7 +41,7 @@ teams = {
       "reitermarkus",
       "samford",
     ],
-    ci_orchestrator = [
+    ci-orchestrator = [
       "Bo98",
       "carlocab",
     ],
@@ -73,7 +73,7 @@ teams = {
       "timsutton",
       "woodruffw",
     ],
-    formulae_web = [
+    formulae-web = [
       "EricFromCanada",
       "MikeMcQuaid",
       "Rylan12",
@@ -166,7 +166,7 @@ teams = {
       "jacobbednarz",
       "MikeMcQuaid",
     ],
-    linux_fonts = [
+    linux-fonts = [
       "sjackman",
       "tani",
     ],
