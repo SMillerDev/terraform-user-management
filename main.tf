@@ -1,19 +1,3 @@
-terraform {
-  cloud {
-    organization = "Homebrew"
-
-    workspaces {
-      name = "terraform-user-management"
-    }
-  }
-}
-
-locals {
-  plc = ["SMillerDev", "MikeMcQuaid", "jonchang", "issyl0", "mistydemeo"]
-  tsc = ["MikeMcQuaid", "Bo98", "fxcoudert", "iMichka", "Rylan12"]
-  ops = ["jonchang", "Bo98", "fxcoudert", "Rylan12", "dawidd6", "carlocab", "reitermarkus", "nandahkrishna"]
-}
-
 module "github" {
   source = "./github"
   plc    = local.plc
