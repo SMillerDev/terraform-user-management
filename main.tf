@@ -1,8 +1,8 @@
 module "github" {
   source = "./github"
-  plc    = local.plc
-  tsc    = local.tsc
-  ops    = local.ops
+  plc    = var.teams.plc
+  tsc    = var.teams.maintainers.tsc
+  ops    = var.teams.maintainers.ops
 }
 
 module "google-cloud" {
