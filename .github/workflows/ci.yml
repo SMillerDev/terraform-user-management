@@ -16,6 +16,8 @@ jobs:
     permissions:
       contents: read
       id-token: write
+    env:
+      TFC_AWS_RUN_ROLE_ARN: ${{ secrets.amazon_role }}
     steps:
       - uses: actions/checkout@v4
 
@@ -24,6 +26,12 @@ jobs:
       - name: OpenTofu fmt
         id: fmt
         run: tofu fmt -check
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: us-east-1
+          role-to-assume: ${{ secrets.amazon_role }}
 
       - name: OpenTofu Init
         id: init
@@ -36,7 +44,7 @@ jobs:
       - name: OpenTofu Plan
         env:
           GITHUB_TOKEN: ${{ secrets.TF_GH_TOKEN }}
-        run: tofu plan -no-color -var-file .tfvars
+        run: tofu plan -no-color -var-file .tfvars -detailed-exitcode 
 
   trivy:
     name: Trivy

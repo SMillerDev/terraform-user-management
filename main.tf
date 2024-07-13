@@ -1,3 +1,11 @@
+terraform {
+  backend "s3" {
+    bucket = "homebrew-terraform-state"
+    key    = "terraform.tfstate"
+    region = "us-east-1"
+  }
+}
+
 module "github" {
   source = "./github"
   plc    = var.teams.plc
