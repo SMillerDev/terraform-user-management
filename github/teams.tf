@@ -1,23 +1,18 @@
 locals {
   teams = [
-    "aliases",
-    "autoupdate",
     "bots",
-    "bundle",
-    "command-not-found",
     "maintainers",
     "members",
-    "ruby-macho"
   ]
   maintainer_teams = [
     "brew",
+    "bundle",
     "cask",
     "core",
     "formulae-brew-sh",
-    "linux",
     "ops",
     "plc",
-    "tsc"
+    "tsc",
   ]
 }
 
