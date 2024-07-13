@@ -179,3 +179,5 @@ teams = {
     ],
   },
 }
+
+github_admins = [ "issyl0", "p-linnane", "bo98", "mikemcquaid" ]

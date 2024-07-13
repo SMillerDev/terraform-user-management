@@ -3,8 +3,8 @@ data "github_team" "ops" {
 }
 
 resource "github_team_membership" "ops_membership" {
-  for_each = toset(var.ops)
+  for_each = toset(var.teams.maintainers.ops)
   team_id  = data.github_team.ops.id
   username = each.key
-  role     = contains(concat(var.plc, var.tsc), each.key) ? "maintainer" : "member"
+  role     = contains(concat(var.teams.plc, var.teams.maintainers.tsc), each.key) ? "maintainer" : "member"
 }

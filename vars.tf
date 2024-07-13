@@ -20,3 +20,12 @@ variable "teams" {
     })
   })
 }
+
+variable "github_admins" {
+  type = list(string)
+}
+
+variable "email_overrides" {
+  type    = map(string)
+  default = {}
+}

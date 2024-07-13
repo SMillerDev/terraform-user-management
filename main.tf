@@ -8,9 +8,8 @@ terraform {
 
 module "github" {
   source = "./github"
-  plc    = var.teams.plc
-  tsc    = var.teams.maintainers.tsc
-  ops    = var.teams.maintainers.ops
+  teams  = var.teams
+  admins = var.github_admins
 }
 
 module "google-cloud" {
