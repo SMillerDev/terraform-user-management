@@ -6,10 +6,16 @@ terraform {
   }
 }
 
+locals {
+  # these people can't have their membership managed by OpenTofu becuase they are Billing Managers in GitHub
+  unmanagable_members = ["p-linnane", "issyl0", "colindean", "MikeMcQuaid", "BrewSponsorsBot"]
+}
+
 module "github" {
-  source = "./github"
-  teams  = var.teams
-  admins = var.github_admins
+  source              = "./github"
+  teams               = var.teams
+  admins              = var.github_admins
+  unmanagable_members = local.unmanagable_members
 }
 
 module "google-cloud" {
